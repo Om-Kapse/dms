@@ -1,0 +1,13 @@
+17. Write a PL/SQL program using: Reverse For Loop
+DECLARE
+BEGIN
+  -- Reverse FOR loop from 10 to 1
+  FOR i IN REVERSE 1..10 LOOP
+    IF MOD(i, 2) = 0 THEN
+      DBMS_OUTPUT.PUT_LINE(i || ' is even');
+    ELSE
+      DBMS_OUTPUT.PUT_LINE(i || ' is odd');
+    END IF;
+  END LOOP;
+END;
+/

@@ -1,0 +1,17 @@
+23. Write a PL/SQL program based on: User defined Exceptions Handling
+DECLARE
+  v_number NUMBER := -5;  -- Change this to test different values
+  -- Declare user-defined exception
+  e_negative_number EXCEPTION;
+BEGIN
+  -- Check if the number is negative
+  IF v_number < 0 THEN
+    RAISE e_negative_number;  -- Raise the exception
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('The number ' || v_number || ' is positive.');
+  END IF;
+
+EXCEPTION
+  -- Handle user-defined exception
+  WHEN e_negative_number THEN
+    DBMS_OUTPUT.PUT_LINE('Error: Negative numbers are not allowed.');

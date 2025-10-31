@@ -1,0 +1,5 @@
+24. Executing DCL commands using SQL: i) Create Users, ii) Grant Privileges to users
+CREATE USER john IDENTIFIED BY John123;
+GRANT CONNECT, RESOURCE TO john;
+GRANT CREATE TABLE, CREATE SEQUENCE TO john;
+GRANT SELECT, INSERT, UPDATE ON employees TO john;

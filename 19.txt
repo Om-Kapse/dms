@@ -1,0 +1,20 @@
+19. Write a PL/SQL code to implement: Implicit Cursors
+DECLARE
+  v_emp_name VARCHAR2(50);
+  v_emp_id   NUMBER := 101;  -- example employee ID
+BEGIN
+  -- Implicit cursor: SELECT INTO automatically opens, fetches, and closes
+  SELECT first_name || ' ' || last_name
+  INTO v_emp_name
+  FROM employees
+  WHERE employee_id = v_emp_id;
+
+  DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_emp_name);
+
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('No employee found with ID ' || v_emp_id);
+  WHEN TOO_MANY_ROWS THEN
+    DBMS_OUTPUT.PUT_LINE('More than one employee found with ID ' || v_emp_id);
+END;
+/

@@ -1,0 +1,13 @@
+21. Write a PL/SQL code to implement: create Procedures
+-- Create the procedure
+CREATE OR REPLACE PROCEDURE greet_user(p_name IN VARCHAR2) IS
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('Hello, ' || p_name || '! Welcome to PL/SQL.');
+END;
+/
+#Calling:
+BEGIN
+  greet_user('Alice');
+  greet_user('Bob');
+END;
+/

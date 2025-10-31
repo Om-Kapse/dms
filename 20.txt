@@ -1,0 +1,29 @@
+20. Write a PL/SQL code to implement: Explicit Cursors
+DECLARE
+  -- Declare explicit cursor
+  CURSOR emp_cursor IS
+    SELECT first_name, last_name
+    FROM employees
+    WHERE department_id = 10;
+
+  -- Variables to hold fetched data
+  v_first_name employees.first_name%TYPE;
+  v_last_name  employees.last_name%TYPE;
+BEGIN
+  -- Open the cursor
+  OPEN emp_cursor;
+
+  LOOP
+    -- Fetch each row into variables
+    FETCH emp_cursor INTO v_first_name, v_last_name;
+    
+    -- Exit loop when no more rows
+    EXIT WHEN emp_cursor%NOTFOUND;
+
+    -- Display employee name
+    DBMS_OUTPUT.PUT_LINE(v_first_name || ' ' || v_last_name);
+  END LOOP;
+
+  -- Close the cursor
+  CLOSE emp_cursor;
+END;

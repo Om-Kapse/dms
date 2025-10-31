@@ -1,0 +1,11 @@
+16. Write a PL/SQL program using: For loop
+DECLARE
+  v_square NUMBER;
+BEGIN
+  -- FOR loop from 1 to 10
+  FOR i IN 1..10 LOOP
+    v_square := i * i;  -- calculate square
+    DBMS_OUTPUT.PUT_LINE('Number: ' || i || ', Square: ' || v_square);
+  END LOOP;
+END;
+/

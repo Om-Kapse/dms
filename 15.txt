@@ -1,0 +1,13 @@
+15. Write a PL/SQL program using: if then else loop
+DECLARE
+  v_number NUMBER;
+BEGIN
+  FOR v_number IN 1..5 LOOP
+    IF MOD(v_number, 2) = 0 THEN
+      DBMS_OUTPUT.PUT_LINE(v_number || ' is even');
+    ELSE
+      DBMS_OUTPUT.PUT_LINE(v_number || ' is odd');
+    END IF;
+  END LOOP;
+END;
+/
